@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:project/EX-1-START-CODE/provider/course_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'screens/course_list_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+     ChangeNotifierProvider(
+       create: (context) => CoursesProvider(),
+       child: const MyApp(),
+     ),
+   );
 }
 
 class MyApp extends StatelessWidget {
